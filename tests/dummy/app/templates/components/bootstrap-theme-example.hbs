@@ -1,0 +1,10 @@
+{{! Create a new body since some bootstrap styles are defined there }}
+<body>
+{{#ember-basic-tree as |tree|}}
+  {{#tree.node "root" isExpanded=true}}
+    {{tree.node "first"}}
+    {{tree.node "second"}}
+    {{tree.node "third"}}
+  {{/tree.node}}
+{{/ember-basic-tree}}
+</body>

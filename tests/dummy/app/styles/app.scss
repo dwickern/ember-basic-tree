@@ -1,4 +1,4 @@
-@import 'ember-tree';
+@import 'ember-basic-tree';
 
 .animated-children-liquid-container {
   overflow: initial;
@@ -9,4 +9,9 @@
   z-index: 10;
   background-color: white;
   border: 1px solid black;
+}
+
+.bootstrap-theme-example {
+  @import 'ember-bootstrap/bootstrap';
+  @import 'ember-basic-tree/themes/bootstrap';
 }
