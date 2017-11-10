@@ -1,0 +1,21 @@
+{{#if publicAPI.isExpandable}}
+  {{component expanderComponent
+    class="ember-basic-tree-expander"
+    tree=(readonly tree)
+    node=(readonly publicAPI)
+  }}
+{{/if}}
+
+{{component contentComponent
+  class="ember-basic-tree-content"
+  tree=(readonly tree)
+  node=(readonly publicAPI)
+}}
+
+{{#component childrenComponent
+  class="ember-basic-tree-children"
+  tree=(readonly tree)
+  node=(readonly publicAPI)
+}}
+  {{yield}}
+{{/component}}

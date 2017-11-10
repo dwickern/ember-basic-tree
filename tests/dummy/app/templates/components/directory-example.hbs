@@ -1,0 +1,33 @@
+{{#ember-basic-tree as |tree|}}
+  {{#tree.node "ember-basic-tree" isExpanded=true}}
+    {{#tree.node "app"}}
+      {{tree.node "components"}}
+      {{tree.node "controllers"}}
+      {{tree.node "helpers"}}
+      {{tree.node "models"}}
+      {{tree.node "routes"}}
+      {{#tree.node "styles"}}
+        {{tree.node "app.css" isExpandable=false}}
+      {{/tree.node}}
+      {{#tree.node "templates"}}
+        {{tree.node "components"}}
+        {{tree.node "application.hbs" isExpandable=false}}
+      {{/tree.node}}
+    {{/tree.node}}
+    {{#tree.node "config"}}
+      {{tree.node "environment.js" isExpandable=false}}
+      {{tree.node "targets.js" isExpandable=false}}
+    {{/tree.node}}
+    {{#tree.node "public"}}
+      {{tree.node "crossdomain.xml" isExpandable=false}}
+      {{tree.node "robots.txt" isExpandable=false}}
+    {{/tree.node}}
+    {{tree.node ".editorconfig" isExpandable=false}}
+    {{tree.node ".ember-cli" isExpandable=false}}
+    {{tree.node ".eslintrc.js" isExpandable=false}}
+    {{tree.node ".gitignore" isExpandable=false}}
+    {{tree.node "ember-cli-build.js" isExpandable=false}}
+    {{tree.node "package.json" isExpandable=false}}
+    {{tree.node "README.md" isExpandable=false}}
+  {{/tree.node}}
+{{/ember-basic-tree}}

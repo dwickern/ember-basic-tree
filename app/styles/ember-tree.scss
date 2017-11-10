@@ -1,0 +1,26 @@
+$ember-basic-tree-expander-size: 16px;
+
+.ember-basic-tree, .ember-basic-tree-children {
+  position: relative;
+  padding-left: $ember-basic-tree-expander-size;
+  white-space: nowrap;
+}
+
+.ember-basic-tree-content {
+  overflow: hidden;
+}
+
+.ember-basic-tree-expander {
+  position: absolute;
+  left: 0;
+  width: $ember-basic-tree-expander-size;
+  height: $ember-basic-tree-expander-size;
+  cursor: pointer;
+
+  &--expanded:before {
+    content: '\25BE';
+  }
+  &--collapsed:before {
+    content: '\25B8';
+  }
+}
