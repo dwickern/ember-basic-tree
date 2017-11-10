@@ -1,14 +1,18 @@
 @import 'ember-basic-tree';
 
-.animated-children-liquid-container {
-  overflow: initial;
+.animation-example {
+  &--liquid-container {
+    overflow: initial;
+  }
 }
 
-.ember-basic-dropdown-content {
-  position: absolute;
-  z-index: 10;
-  background-color: white;
-  border: 1px solid black;
+.context-menu-example {
+  &--dropdown-content {
+    position: absolute;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid black;
+  }
 }
 
 .bootstrap-theme-example {
