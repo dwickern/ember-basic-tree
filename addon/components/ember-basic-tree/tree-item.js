@@ -17,6 +17,7 @@ const TreeItemComponent = Component.extend({
   classNames: 'ember-basic-tree-item',
   isExpandable: defaultTo(true),
   isExpanded: defaultTo(false),
+  onExpanded() {},
 
   init() {
     this._super(...arguments);
@@ -36,9 +37,7 @@ const TreeItemComponent = Component.extend({
     this._super(...arguments);
 
     this.updateState({
-      content: this.get('content'),
-      isExpanded: this.get('isExpanded'),
-      isExpandable: this.get('isExpandable')
+      ...this.attrs
     });
   },
 

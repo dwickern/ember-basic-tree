@@ -1,0 +1,13 @@
+{{#basic-dropdown as |dd|}}
+  {{#dd.trigger}}
+    {{node.content}}
+  {{/dd.trigger}}
+
+  {{#dd.content}}
+    {{#if node.menuComponent}}
+      {{component node.menuComponent}}
+    {{else}}
+      {{node.menuText}}
+    {{/if}}
+  {{/dd.content}}
+{{/basic-dropdown}}
