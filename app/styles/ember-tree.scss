@@ -12,10 +12,10 @@ $ember-basic-tree-expander-size: 16px;
 
 .ember-basic-tree-expander {
   position: absolute;
-  left: 0;
+  cursor: pointer;
   width: $ember-basic-tree-expander-size;
   height: $ember-basic-tree-expander-size;
-  cursor: pointer;
+  margin-left: -$ember-basic-tree-expander-size;
 
   &--expanded:before {
     content: '\25BE';
