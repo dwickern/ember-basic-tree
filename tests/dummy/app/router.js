@@ -7,6 +7,18 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('navigation-example', function() {
+    this.route('child1', function() {
+      this.route('descendant1');
+      this.route('descendant2');
+      this.route('descendant3');
+    });
+    this.route('child2', function() {
+      this.route('descendant1');
+      this.route('descendant2');
+      this.route('descendant3');
+    });
+  });
 });
 
 export default Router;

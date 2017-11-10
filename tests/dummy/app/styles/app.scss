@@ -29,3 +29,25 @@
     }
   }
 }
+
+.navigation-example {
+  @import 'ember-bootstrap/bootstrap';
+  @import 'ember-basic-tree/themes/bootstrap';
+
+  .navigation-example-link {
+    margin: 1px 2px;
+    padding: 1px 3px;
+    border-radius: $nav-pills-border-radius;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background-color: $nav-link-hover-bg;
+    }
+
+    &.active {
+      color: $nav-pills-active-link-hover-color;
+      background-color: $nav-pills-active-link-hover-bg;
+    }
+  }
+}
