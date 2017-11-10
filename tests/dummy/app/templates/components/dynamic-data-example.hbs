@@ -1,0 +1,6 @@
+{{#ember-basic-tree
+  contentComponent=(component "dynamic-data-example/dynamic-content")
+  childrenComponent=(component "dynamic-data-example/dynamic-children") as |tree|
+}}
+  {{tree.node root isExpanded=true}}
+{{/ember-basic-tree}}
