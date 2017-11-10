@@ -9,6 +9,30 @@ export default Component.extend({
   expanderComponent: 'ember-basic-tree/tree-item-expander',
   contentComponent: 'ember-basic-tree/tree-item-content',
   childrenComponent: 'ember-basic-tree/tree-item-children',
+  onExpanded() {},
 
-  onExpanded() {}
+  init() {
+    this._super(...arguments);
+
+    this.set('publicAPI', {
+      actions: {
+      }
+    });
+  },
+
+  didReceiveAttrs() {
+    this._super(...arguments);
+
+    this.updateState({
+      ...this.attrs
+    });
+  },
+
+  updateState(changes) {
+    let state = this.get('publicAPI');
+    let changed = Object.keys(changes).some(key => state[key] !== changes[key]);
+    if (changed) {
+      return this.set('publicAPI', { ...state, ...changes });
+    }
+  },
 });

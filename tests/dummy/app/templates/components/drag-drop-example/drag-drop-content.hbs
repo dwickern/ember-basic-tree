@@ -1,0 +1,11 @@
+{{#if node.content.leaf}}
+  {{! files are draggable }}
+  {{#draggable-object content=node}}
+    {{node.content.name}}
+  {{/draggable-object}}
+{{else}}
+  {{! folders are drop targets }}
+  {{#draggable-object-target action=tree.onDrop node=node.content}}
+    {{node.content.name}}
+  {{/draggable-object-target}}
+{{/if}}

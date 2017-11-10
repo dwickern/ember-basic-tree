@@ -5,25 +5,27 @@
     contentComponent=(readonly contentComponent)
     childrenComponent=(readonly childrenComponent)
     onExpanded=(readonly onExpanded)
-  )) as |tree|}}
+    tree=(readonly tree)
+    parent=(readonly publicAPI)
+  )) as |treeComponents|}}
 
   {{#if publicAPI.isExpandable}}
     {{component expanderComponent
       class="ember-basic-tree-expander"
-      tree=(readonly tree)
+      tree=(readonly (merge tree treeComponents))
       node=(readonly publicAPI)
     }}
   {{/if}}
 
   {{component contentComponent
     class="ember-basic-tree-content"
-    tree=(readonly tree)
+    tree=(readonly (merge tree treeComponents))
     node=(readonly publicAPI)
   }}
 
   {{#component childrenComponent
     class="ember-basic-tree-children"
-    tree=(readonly tree)
+    tree=(readonly (merge tree treeComponents))
     node=(readonly publicAPI)
   }}
     {{yield}}

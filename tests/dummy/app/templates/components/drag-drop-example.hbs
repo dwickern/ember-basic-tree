@@ -1,0 +1,11 @@
+{{#ember-basic-tree
+  contentComponent=(component "drag-drop-example/drag-drop-content")
+  childrenComponent=(component "drag-drop-example/drag-drop-children")
+  onDrop=(action "handleDrop") as |tree|
+}}
+  {{tree.node root isExpanded=true}}
+{{/ember-basic-tree}}
+
+<pre>
+  {{inspect}}
+</pre>

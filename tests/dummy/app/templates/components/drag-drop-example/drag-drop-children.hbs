@@ -1,0 +1,5 @@
+{{#if node.isExpanded}}
+  {{#each node.content.children as |child|}}
+    {{tree.node child isExpandable=(not child.leaf)}}
+  {{/each}}
+{{/if}}

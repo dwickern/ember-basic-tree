@@ -19,3 +19,13 @@
   @import 'ember-bootstrap/bootstrap';
   @import 'ember-basic-tree/themes/bootstrap';
 }
+
+.drag-drop-example {
+  .draggable-object, .draggable-object-target {
+    border: 1px solid transparent;
+
+    &.accepts-drag {
+      border: 1px dotted black;
+    }
+  }
+}
