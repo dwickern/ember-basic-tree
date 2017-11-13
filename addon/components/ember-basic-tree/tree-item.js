@@ -36,12 +36,9 @@ const TreeItemComponent = Component.extend({
   didReceiveAttrs() {
     this._super(...arguments);
 
-    this.updateState({
-      ...this.attrs,
-      content: this.get('content'),
-      isExpanded: this.get('isExpanded'),
-      isExpandable: this.get('isExpandable')
-    });
+    const props = Object.keys(this.attrs);
+    const state = this.getProperties(props);
+    this.updateState(state);
   },
 
   updateState(changes) {

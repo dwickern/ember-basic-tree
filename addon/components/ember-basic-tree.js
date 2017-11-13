@@ -23,9 +23,9 @@ export default Component.extend({
   didReceiveAttrs() {
     this._super(...arguments);
 
-    this.updateState({
-      ...this.attrs
-    });
+    const props = Object.keys(this.attrs);
+    const state = this.getProperties(props);
+    this.updateState(state);
   },
 
   updateState(changes) {
