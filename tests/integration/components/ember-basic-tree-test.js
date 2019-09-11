@@ -2,7 +2,7 @@ import { A } from '@ember/array';
 import Component from '@ember/component';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, settled } from '@ember/test-helpers';
+import { render, settled, click, find } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Component | ember basic tree', function(hooks) {
@@ -22,7 +22,7 @@ module('Integration | Component | ember basic tree', function(hooks) {
       {{/ember-basic-tree}}
     `);
 
-    assert.equal(this.$().text().trim(), 'node');
+    assert.equal(find('*').textContent.trim(), 'node');
   });
 
   test('do not render collapsed nodes', async function(assert) {
@@ -34,7 +34,7 @@ module('Integration | Component | ember basic tree', function(hooks) {
       {{/ember-basic-tree}}
     `);
 
-    assert.equal(this.$().text().trim(), '');
+    assert.equal(find('*').textContent.trim(), '');
   });
 
 
@@ -48,13 +48,13 @@ module('Integration | Component | ember basic tree', function(hooks) {
       {{/ember-basic-tree}}
     `);
 
-    assert.equal(this.$().text().trim(), '');
+    assert.equal(find('*').textContent.trim(), '');
 
     this.set('isExpanded', true);
-    assert.equal(this.$().text().trim(), 'node');
+    assert.equal(find('*').textContent.trim(), 'node');
 
     this.set('isExpanded', false);
-    assert.equal(this.$().text().trim(), '');
+    assert.equal(find('*').textContent.trim(), '');
   });
 
   test('notify when items are expanded and collapsed', async function(assert) {
@@ -68,10 +68,10 @@ module('Integration | Component | ember basic tree', function(hooks) {
       {{/ember-basic-tree}}
     `);
 
-    this.$('.ember-basic-tree-expander').click();
+    await click('.ember-basic-tree-expander');
     assert.equal(expanded, true);
 
-    this.$('.ember-basic-tree-expander').click();
+    await click('.ember-basic-tree-expander');
     assert.equal(expanded, false);
   });
 
@@ -88,10 +88,10 @@ module('Integration | Component | ember basic tree', function(hooks) {
 
     items.pushObject('foo');
     await settled();
-    assert.equal(this.$().text().trim(), 'foo');
+    assert.equal(find('*').textContent.trim(), 'foo');
 
     this.set('items', [ 'baz' ]);
-    assert.equal(this.$().text().trim(), 'baz');
+    assert.equal(find('*').textContent.trim(), 'baz');
   });
 
   test('custom contentComponent', async function(assert) {
@@ -108,9 +108,9 @@ module('Integration | Component | ember basic tree', function(hooks) {
       {{/ember-basic-tree}}
     `);
 
-    assert.equal(this.$().text().trim(), 'title1: content');
+    assert.equal(find('*').textContent.trim(), 'title1: content');
 
     this.set('customTitle', 'title2');
-    assert.equal(this.$().text().trim(), 'title2: content');
+    assert.equal(find('*').textContent.trim(), 'title2: content');
   });
 });
