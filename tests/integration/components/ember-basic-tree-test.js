@@ -22,7 +22,7 @@ module('Integration | Component | ember basic tree', function(hooks) {
       {{/ember-basic-tree}}
     `);
 
-    assert.equal(find('*').textContent.trim(), 'node');
+    assert.dom('*').hasText('node');
   });
 
   test('do not render collapsed nodes', async function(assert) {
@@ -34,7 +34,7 @@ module('Integration | Component | ember basic tree', function(hooks) {
       {{/ember-basic-tree}}
     `);
 
-    assert.equal(find('*').textContent.trim(), '');
+    assert.dom('*').hasText('');
   });
 
 
@@ -48,13 +48,13 @@ module('Integration | Component | ember basic tree', function(hooks) {
       {{/ember-basic-tree}}
     `);
 
-    assert.equal(find('*').textContent.trim(), '');
+    assert.dom('*').hasText('');
 
     this.set('isExpanded', true);
-    assert.equal(find('*').textContent.trim(), 'node');
+    assert.dom('*').hasText('node');
 
     this.set('isExpanded', false);
-    assert.equal(find('*').textContent.trim(), '');
+    assert.dom('*').hasText('');
   });
 
   test('notify when items are expanded and collapsed', async function(assert) {
@@ -88,10 +88,10 @@ module('Integration | Component | ember basic tree', function(hooks) {
 
     items.pushObject('foo');
     await settled();
-    assert.equal(find('*').textContent.trim(), 'foo');
+    assert.dom('*').hasText('foo');
 
     this.set('items', [ 'baz' ]);
-    assert.equal(find('*').textContent.trim(), 'baz');
+    assert.dom('*').hasText('baz');
   });
 
   test('custom contentComponent', async function(assert) {
@@ -108,9 +108,9 @@ module('Integration | Component | ember basic tree', function(hooks) {
       {{/ember-basic-tree}}
     `);
 
-    assert.equal(find('*').textContent.trim(), 'title1: content');
+    assert.dom('*').hasText('title1: content');
 
     this.set('customTitle', 'title2');
-    assert.equal(find('*').textContent.trim(), 'title2: content');
+    assert.dom('*').hasText('title2: content');
   });
 });
