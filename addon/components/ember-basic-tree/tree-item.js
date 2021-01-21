@@ -1,79 +1,59 @@
-import Component from '@ember/component';
-import { computed } from '@ember/object';
-import layout from '../../templates/components/ember-basic-tree/tree-item';
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
-function defaultTo(defaultValue) {
-  return computed({
-    get() { return defaultValue; },
-    set(_, value) {
-      return value === undefined ? defaultValue : value;
+export default class TreeItemComponent extends Component {
+  #actions = {
+    expand: this.expand,
+    collapse: this.collapse,
+    toggle: this.toggle,
+  };
+
+  /** Track expanded state on the component if `onExpanded` is not being used */
+  @tracked _isExpanded;
+
+  get isExpanded() {
+    if (this.args.onExpanded && this.args.isExpanded !== undefined) {
+      return this.args.isExpanded;
     }
-  });
-}
-
-const TreeItemComponent = Component.extend({
-  layout,
-
-  classNames: 'ember-basic-tree-item',
-  isExpandable: defaultTo(true),
-  isExpanded: defaultTo(false),
-  onExpanded() {},
-
-  init() {
-    this._super(...arguments);
-
-    this.set('publicAPI', {
-      isExpanded: this.get('isExpanded'),
-      isExpandable: this.get('isExpandable'),
-      actions: {
-        expand: (...args) => this.send('expand', ...args),
-        collapse: (...args) => this.send('collapse', ...args),
-        toggle: (...args) => this.send('toggle', ...args)
-      }
-    });
-  },
-
-  didReceiveAttrs() {
-    this._super(...arguments);
-
-    const props = Object.keys(this.attrs);
-    const state = this.getProperties(props);
-    this.updateState(state);
-  },
-
-  updateState(changes) {
-    let state = this.get('publicAPI');
-    let changed = Object.keys(changes).some(key => state[key] !== changes[key]);
-    if (changed) {
-      return this.set('publicAPI', { ...state, ...changes });
+    if (this._isExpanded !== undefined) {
+      return this._isExpanded;
     }
-  },
-
-  updateExpanded(isExpanded) {
-    let state = this.get('publicAPI');
-    if (state.isExpanded !== isExpanded) {
-      this.updateState({ isExpanded });
-      this.get('onExpanded')(isExpanded, state);
-    }
-  },
-
-  actions: {
-    expand() {
-      this.updateExpanded(true);
-    },
-
-    collapse() {
-      this.updateExpanded(false);
-    },
-
-    toggle() {
-      this.updateExpanded(!this.get('publicAPI').isExpanded);
-    }
+    return this.args.isExpanded || false;
   }
-});
 
-TreeItemComponent.reopenClass({
-  positionalParams: [ 'content' ]
-});
+  get isExpandable() {
+    return this.args.isExpandable !== undefined ? this.args.isExpandable : true;
+  }
 
-export default TreeItemComponent;
+  get publicAPI() {
+    return {
+      ...this.args,
+      isExpanded: this.isExpanded,
+      isExpandable: this.isExpandable,
+      actions: this.#actions,
+    };
+  }
+
+  setExpanded(isExpanded) {
+    if (this.args.onExpanded) {
+      this.args.onExpanded(isExpanded, this.publicAPI);
+    }
+    this._isExpanded = isExpanded;
+  }
+
+  @action
+  expand() {
+    this.setExpanded(true);
+  }
+
+  @action
+  collapse() {
+    this.setExpanded(false);
+  }
+
+  @action
+  toggle() {
+    this.setExpanded(!this.isExpanded);
+  }
+}

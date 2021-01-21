@@ -1,0 +1,23 @@
+<div class="ember-basic-tree-item" ...attributes>
+  {{#if this.isExpandable}}
+    {{#let (component (or @expanderComponent @tree.expanderComponent)) as |TreeExpander|}}
+      <TreeExpander
+        class="ember-basic-tree-expander ember-basic-tree-expander{{if this.isExpanded "--expanded" "--collapsed"}}"
+        @tree={{@tree}}
+        @node={{this.publicAPI}}
+      />
+    {{/let}}
+  {{/if}}
+
+  {{#let (component (or @contentComponent @tree.contentComponent)) as |TreeContent|}}
+    <TreeContent class="ember-basic-tree-content" @tree={{@tree}} @node={{this.publicAPI}} />
+  {{/let}}
+
+  {{#let (component (or @childrenComponent @tree.childrenComponent)) as |TreeChildren|}}
+    {{#let (merge @tree (hash node=(component @tree.nodeComponent tree=@tree))) as |treeAPI|}}
+      <TreeChildren class="ember-basic-tree-children" @tree={{treeAPI}} @node={{this.publicAPI}}>
+        {{yield}}
+      </TreeChildren>
+    {{/let}}
+  {{/let}}
+</div>

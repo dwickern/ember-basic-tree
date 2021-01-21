@@ -1,0 +1,5 @@
+<div class="ember-basic-tree" ...attributes>
+  {{#let (hash node=(component this.publicAPI.nodeComponent tree=this.publicAPI)) as |treeAPI|}}
+    {{yield treeAPI}}
+  {{/let}}
+</div>
