@@ -1,51 +1,52 @@
 import { A } from '@ember/array';
 import Component from '@ember/component';
+import ComponentG from '@glimmer/component';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, settled, click } from '@ember/test-helpers';
+import { render, settled, find, click } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | ember basic tree', function(hooks) {
+module('Integration | Component | ember basic tree', function (hooks) {
   setupRenderingTest(hooks);
 
-  hooks.beforeEach(function() {
+  hooks.beforeEach(function () {
     this.actions = {};
-    this.send = (actionName, ...args) => this.actions[actionName].apply(this, args);
+    this.send = (actionName, ...args) =>
+      this.actions[actionName].apply(this, args);
   });
 
-  test('render expanded nodes', async function(assert) {
+  test('render expanded nodes', async function (assert) {
     await render(hbs`
-      {{#ember-basic-tree as |tree|}}
-        {{#tree.node isExpanded=true}}
-          {{tree.node "node"}}
-        {{/tree.node}}
-      {{/ember-basic-tree}}
+      <EmberBasicTree as |tree|>
+        <tree.node @isExpanded={{true}}>
+          <tree.node @content="node"/>
+        </tree.node>
+      </EmberBasicTree>
     `);
 
     assert.dom('*').hasText('node');
   });
 
-  test('do not render collapsed nodes', async function(assert) {
+  test('do not render collapsed nodes', async function (assert) {
     await render(hbs`
-      {{#ember-basic-tree as |tree|}}
-        {{#tree.node isExpanded=false}}
-          {{tree.node "node"}}
-        {{/tree.node}}
-      {{/ember-basic-tree}}
+      <EmberBasicTree as |tree|>
+        <tree.node @isExpanded={{false}}>
+          <tree.node @content="node"/>
+        </tree.node>
+      </EmberBasicTree>
     `);
 
     assert.dom('*').hasText('');
   });
 
-
-  test('expand and collapse', async function(assert) {
+  test('expand and collapse', async function (assert) {
     this.set('isExpanded', false);
     await render(hbs`
-      {{#ember-basic-tree as |tree|}}
-        {{#tree.node isExpanded=isExpanded}}
-          {{tree.node "node"}}
-        {{/tree.node}}
-      {{/ember-basic-tree}}
+      <EmberBasicTree as |tree|>
+        <tree.node @isExpanded={{this.isExpanded}}>
+          <tree.node @content="node"/>
+        </tree.node>
+      </EmberBasicTree>
     `);
 
     assert.dom('*').hasText('');
@@ -57,55 +58,62 @@ module('Integration | Component | ember basic tree', function(hooks) {
     assert.dom('*').hasText('');
   });
 
-  test('notify when items are expanded and collapsed', async function(assert) {
+  test('notify when items are expanded and collapsed', async function (assert) {
     let expanded = null;
-    this.actions.onExpanded = function (value) {
+    this.onExpanded = function (value) {
       expanded = value;
     };
     await render(hbs`
-      {{#ember-basic-tree onExpanded=(action "onExpanded") as |tree|}}
-        {{tree.node}}
-      {{/ember-basic-tree}}
+      <EmberBasicTree as |tree|>
+        <tree.node @onExpanded={{this.onExpanded}}>
+          <tree.node @content="node"/>
+        </tree.node>
+      </EmberBasicTree>
     `);
 
-    await click('.ember-basic-tree-expander');
+    const expander = find('.ember-basic-tree-expander');
+
+    await click(expander);
     assert.equal(expanded, true);
 
-    await click('.ember-basic-tree-expander');
+    await click(expander);
     assert.equal(expanded, false);
   });
 
-  test('dynamically add nodes', async function(assert) {
+  test('dynamically add nodes', async function (assert) {
     const items = A();
     this.set('items', items);
     await render(hbs`
-      {{#ember-basic-tree as |tree|}}
+      <EmberBasicTree as |tree|>
         {{#each items as |item|}}
-          {{tree.node item}}
+          <tree.node @content={{item}}/>
         {{/each}}
-      {{/ember-basic-tree}}
+      </EmberBasicTree>
     `);
 
     items.pushObject('foo');
     await settled();
     assert.dom('*').hasText('foo');
 
-    this.set('items', [ 'baz' ]);
+    this.set('items', ['baz']);
     assert.dom('*').hasText('baz');
   });
 
-  test('custom contentComponent', async function(assert) {
-    this.owner.register('component:custom-content', Component.extend({
-      layout: hbs`
-        {{node.title}}: {{node.content}}
-      `
-    }));
+  test('custom contentComponent', async function (assert) {
+    this.owner.register(
+      'component:custom-content',
+      class extends Component {
+        layout = hbs`
+          {{@node.title}}: {{@node.content}}
+        `;
+      }
+    );
 
     this.set('customTitle', 'title1');
     await render(hbs`
-      {{#ember-basic-tree contentComponent=(component "custom-content") as |tree|}}
-        {{tree.node "content" title=customTitle}}
-      {{/ember-basic-tree}}
+      <EmberBasicTree @contentComponent={{component "custom-content"}} as |tree|>
+        <tree.node @content="content" @title={{this.customTitle}}/>
+      </EmberBasicTree>
     `);
 
     assert.dom('*').hasText('title1: content');
