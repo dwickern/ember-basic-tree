@@ -24,7 +24,7 @@ ember install ember-basic-tree
 Usage
 ------------------------------------------------------------------------------
 
-[View the docs here](https://dwickern.github.io/ember-basic-tree/versions/master).
+[View the docs here](https://dwickern.github.io/ember-basic-tree/).
 
 
 Contributing
