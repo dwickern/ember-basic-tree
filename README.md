@@ -1,8 +1,9 @@
 ember-basic-tree
 ==============================================================================
 
-A highly customizable component-driven tree UI
+![CI](https://github.com/dwickern/ember-basic-tree/workflows/CI/badge.svg)
 
+A customizable template-driven tree component
 
 Compatibility
 ------------------------------------------------------------------------------
@@ -23,7 +24,7 @@ ember install ember-basic-tree
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+[View the docs here](https://dwickern.github.io/ember-basic-tree/versions/master).
 
 
 Contributing
