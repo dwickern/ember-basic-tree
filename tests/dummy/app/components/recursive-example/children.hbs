@@ -1,0 +1,20 @@
+{{! BEGIN-SNIPPET recursive-example-children.hbs }}
+{{#if @node.isExpanded}}
+  <div ...attributes>
+    {{#each @node.directory.subdirectories as |directory|}}
+      <@tree.Node
+        @directory={{directory}}
+        @isExpandable={{true}}
+        @isExpanded={{directory.isExpanded}}
+        @onExpanded={{set directory.isExpanded}}
+      />
+    {{/each}}
+    {{#each @node.directory.files as |file|}}
+      <@tree.Node
+        @file={{file}}
+        @isExpandable={{false}}
+      />
+    {{/each}}
+  </div>
+{{/if}}
+{{! END-SNIPPET }}

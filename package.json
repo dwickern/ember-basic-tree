@@ -1,13 +1,14 @@
 {
   "name": "ember-basic-tree",
   "version": "0.2.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "A customizable template-driven tree component",
   "keywords": [
     "ember-addon"
   ],
-  "repository": "",
+  "homepage": "https://dwickern.github.io/ember-basic-tree",
+  "repository": "dwickern/ember-basic-tree",
   "license": "MIT",
-  "author": "",
+  "author": "Derek Wickern <dwickern@gmail.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -26,12 +27,18 @@
     "test:ember-compatibility": "ember try:each"
   },
   "dependencies": {
+    "ember-assign-helper": "^0.3.0",
     "ember-cli-babel": "^7.23.0",
-    "ember-cli-htmlbars": "^5.3.1"
+    "ember-cli-htmlbars": "^5.3.1",
+    "ember-cli-sass": "^10.0.1",
+    "ember-truth-helpers": "^3.0.0",
+    "sass": "^1.32.5"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.1.4",
+    "@fortawesome/ember-fontawesome": "^0.2.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@glimmer/component": "^1.0.3",
     "@glimmer/tracking": "^1.0.3",
     "babel-eslint": "^10.1.0",
@@ -41,36 +48,43 @@
     "ember-basic-dropdown": "^3.0.12",
     "ember-bootstrap": "^4.6.2",
     "ember-cli": "~3.24.0",
+    "ember-cli-addon-docs": "^1.0.0",
+    "ember-cli-addon-docs-yuidoc": "^1.0.0",
     "ember-cli-dependency-checker": "^3.2.0",
+    "ember-cli-deploy": "^1.0.2",
+    "ember-cli-deploy-build": "^2.0.0",
+    "ember-cli-deploy-git": "^1.3.4",
+    "ember-cli-deploy-git-ci": "^1.0.1",
     "ember-cli-inject-live-reload": "^2.0.2",
-    "ember-cli-sass": "^10.0.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.1",
-    "ember-concurrency": "^1.0.0",
+    "ember-concurrency": "^1.3.0",
+    "ember-crumbly": "^3.0.1",
+    "ember-data": "^3.24.0",
     "ember-disable-prototype-extensions": "^1.1.3",
-    "ember-drag-drop": "^0.8.2",
     "ember-export-application-global": "^2.0.1",
     "ember-load-initializers": "^2.1.2",
     "ember-maybe-import-regenerator": "^0.1.6",
+    "ember-notify": "^6.0.0",
     "ember-page-title": "^6.0.3",
     "ember-qunit": "^5.1.1",
     "ember-resolver": "^8.0.2",
+    "ember-simple-set-helper": "^0.1.2",
     "ember-source": "~3.24.0",
     "ember-source-channel-url": "^3.0.0",
-    "ember-template-lint": "^2.15.0",
-    "ember-truth-helpers": "^3.0.0",
+    "ember-template-lint": "^2.17.0",
     "ember-try": "^1.4.0",
     "eslint": "^7.17.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-ember": "^10.1.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.3.1",
+    "faker": "^5.2.0",
     "loader.js": "^4.7.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "qunit": "^2.13.0",
-    "qunit-dom": "^1.6.0",
-    "sass": "^1.32.5"
+    "qunit-dom": "^1.6.0"
   },
   "engines": {
     "node": "10.* || >= 12"

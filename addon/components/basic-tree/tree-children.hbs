@@ -1,0 +1,7 @@
+{{! BEGIN-SNIPPET tree-children.hbs }}
+{{#if @node.isExpanded}}
+  <ul ...attributes>
+    {{yield}}
+  </ul>
+{{/if}}
+{{! END-SNIPPET }}

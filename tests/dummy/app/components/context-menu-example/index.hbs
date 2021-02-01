@@ -1,0 +1,22 @@
+{{! BEGIN-SNIPPET context-menu-example.hbs }}
+<BasicTree @contentComponent={{component "context-menu-example/content"}} as |tree|>
+  <tree.Node
+    @content="root"
+    @menuText="Context menu for root"
+    @isExpanded={{true}}
+  >
+    <tree.Node
+      @content="first"
+      @menuText="Context menu for first"
+    />
+    <tree.Node
+      @content="second"
+      @menuText="Context menu for second"
+    />
+    <tree.Node
+      @content="third"
+      @menuComponent={{component "context-menu-example/custom-menu"}}
+    />
+  </tree.Node>
+</BasicTree>
+{{! END-SNIPPET }}

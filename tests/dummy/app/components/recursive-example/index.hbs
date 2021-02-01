@@ -1,0 +1,13 @@
+{{! BEGIN-SNIPPET recursive-example.hbs }}
+<BasicTree
+  @contentComponent={{component "recursive-example/content"}}
+  @childrenComponent={{component "recursive-example/children"}} as |tree|
+>
+  <tree.Node
+    @directory={{@root}}
+    @isExpandable={{true}}
+    @isExpanded={{@root.isExpanded}}
+    @onExpanded={{set @root.isExpanded}}
+  />
+</BasicTree>
+{{! END-SNIPPET }}

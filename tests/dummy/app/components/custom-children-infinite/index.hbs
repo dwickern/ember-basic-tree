@@ -1,0 +1,5 @@
+{{! BEGIN-SNIPPET custom-children-infinite-index.hbs }}
+<BasicTree @childrenComponent={{component "custom-children-infinite/children"}} as |tree|>
+  <tree.Node @content="Root" @isExpandable={{true}} @isExpanded={{true}}/>
+</BasicTree>
+{{! END-SNIPPET }}

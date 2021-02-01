@@ -1,0 +1,14 @@
+{{! BEGIN-SNIPPET context-menu-content.hbs }}
+<BasicDropdown as |dd|>
+  <dd.Trigger {{on "contextmenu" (fn this.openContextMenu dd)}}>
+    {{@node.content}}
+  </dd.Trigger>
+  <dd.Content class="context-menu-example--dropdown-content">
+    {{#if @node.menuComponent}}
+      {{component @node.menuComponent}}
+    {{else}}
+      {{@node.menuText}}
+    {{/if}}
+  </dd.Content>
+</BasicDropdown>
+{{! END-SNIPPET }}

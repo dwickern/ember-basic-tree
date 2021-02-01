@@ -1,0 +1,10 @@
+{{! BEGIN-SNIPPET custom-content-override-index.hbs }}
+<BasicTree @contentComponent={{component "custom-content-override/content"}} as |tree|>
+  <tree.Node @label="Root" @isExpanded={{true}}>
+    <tree.Node @label="First"/>
+    <tree.Node @label="Second"/>
+    <tree.Node @label="Third"/>
+    <tree.Node @contentComponent={{component "custom-content-override/special"}}/>
+  </tree.Node>
+</BasicTree>
+{{! END-SNIPPET }}

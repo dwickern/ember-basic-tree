@@ -1,7 +1,0 @@
-{{#ember-basic-tree contentComponent=(component "context-menu-example/content-with-menu") as |tree|}}
-  {{#tree.node "root" isExpanded=true}}
-    {{tree.node "first" menuText="Context menu for first"}}
-    {{tree.node "second" menuText="Context menu for second"}}
-    {{tree.node "third" menuComponent=(component "context-menu-example/custom-menu")}}
-  {{/tree.node}}
-{{/ember-basic-tree}}

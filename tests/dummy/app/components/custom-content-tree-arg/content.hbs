@@ -1,0 +1,5 @@
+{{! BEGIN-SNIPPET custom-content-tree-arg-content.hbs }}
+<button type="button" {{on "click" (fn @tree.clicked @node.label)}}>
+  {{@node.label}}
+</button>
+{{! END-SNIPPET }}

@@ -1,0 +1,31 @@
+{{! BEGIN-SNIPPET each-example.hbs }}
+<BasicTree as |tree|>
+  <tree.Node @content="Companies" @isExpanded={{true}}>
+    {{#each this.data.companies as |company|}}
+      <tree.Node @content={{company.name}}>
+        <tree.Node @content="Departments">
+          {{#each company.departments as |department|}}
+            <tree.Node @content={{department.name}}>
+              <tree.Node @content="Products">
+                {{#each department.products as |product|}}
+                  <tree.Node @content={{product.name}}/>
+                {{/each}}
+              </tree.Node>
+              <tree.Node @content="Supervisors">
+                {{#each department.supervisors as |supervisor|}}
+                  <tree.Node @content={{concat supervisor.firstName " " supervisor.lastName}}/>
+                {{/each}}
+              </tree.Node>
+            </tree.Node>
+          {{/each}}
+        </tree.Node>
+        <tree.Node @content="Warehouses">
+          {{#each company.warehouses as |warehouse|}}
+            <tree.Node @content={{warehouse.location}}/>
+          {{/each}}
+        </tree.Node>
+      </tree.Node>
+    {{/each}}
+  </tree.Node>
+</BasicTree>
+{{! END-SNIPPET }}

@@ -1,9 +1,0 @@
-{{#if node.isExpanded}}
-  {{#if node.content.children.isRunning}}
-    Loading...
-  {{else}}
-    {{#each node.content.children.value as |child|}}
-      {{tree.node child isExpandable=(not child.leaf)}}
-    {{/each}}
-  {{/if}}
-{{/if}}

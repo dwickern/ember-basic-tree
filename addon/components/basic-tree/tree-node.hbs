@@ -1,0 +1,38 @@
+{{ember-basic-tree-invoke this.setHasBlock (has-block)}}
+<li
+  class="ember-basic-tree-node"
+  role="treeitem"
+  aria-expanded={{this.ariaExpanded}}
+  ...attributes
+>
+  {{#if this.isExpandable}}
+    {{#let (component (or @expanderComponent @tree.expanderComponent)) as |TreeExpander|}}
+      <TreeExpander
+        class="ember-basic-tree-expander"
+        @tree={{@tree}}
+        @node={{this.publicAPI}}
+      />
+    {{/let}}
+  {{/if}}
+
+  {{#let (component (or @contentComponent @tree.contentComponent)) as |TreeContent|}}
+    <TreeContent
+      class="ember-basic-tree-content"
+      @tree={{@tree}}
+      @node={{this.publicAPI}}
+    />
+  {{/let}}
+
+  {{#let (component (or @childrenComponent @tree.childrenComponent)) as |TreeChildren|}}
+    {{#let (assign @tree (hash Node=(component @tree.nodeComponent tree=@tree))) as |treeAPI|}}
+      <TreeChildren
+        role="group"
+        class="ember-basic-tree-children"
+        @tree={{treeAPI}}
+        @node={{this.publicAPI}}
+      >
+        {{yield}}
+      </TreeChildren>
+    {{/let}}
+  {{/let}}
+</li>

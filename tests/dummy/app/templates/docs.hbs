@@ -1,0 +1,19 @@
+<DocsViewer as |viewer|>
+  <viewer.nav as |nav|>
+    <nav.section @label="Introduction"/>
+    <nav.item @label="Overview" @route="docs.index"/>
+    <nav.item @label="Installation" @route="docs.installation"/>
+    <nav.item @label="Usage" @route="docs.usage"/>
+    <nav.section @label="Customization"/>
+    <nav.item @label="Content" @route="docs.customization.content"/>
+    <nav.item @label="Children" @route="docs.customization.children"/>
+    <nav.item @label="Expander" @route="docs.customization.expander"/>
+    <nav.section @label="Examples"/>
+    <nav.item @label="Recursive Data" @route="docs.examples.recursive"/>
+    <nav.item @label="Navigation" @route="docs.examples.navigation"/>
+    <nav.item @label="Context Menu" @route="docs.examples.context-menu"/>
+  </viewer.nav>
+  <viewer.main>
+    {{outlet}}
+  </viewer.main>
+</DocsViewer>

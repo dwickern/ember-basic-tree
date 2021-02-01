@@ -1,0 +1,16 @@
+{{! BEGIN-SNIPPET custom-expander-icon-index.hbs }}
+<BasicTree @expanderComponent={{component "custom-expander-icon/expander"}} as |tree|>
+  <tree.Node @content="Root" @isExpanded={{true}}>
+    <tree.Node @content="Sub1" @isExpanded={{true}}>
+      <tree.Node @content="Desc1" />
+      <tree.Node @content="Desc2" />
+      <tree.Node @content="Desc3" />
+    </tree.Node>
+    <tree.Node @content="Sub2">
+      <tree.Node @content="Desc1" />
+      <tree.Node @content="Desc2" />
+      <tree.Node @content="Desc3" />
+    </tree.Node>
+  </tree.Node>
+</BasicTree>
+{{! END-SNIPPET }}
