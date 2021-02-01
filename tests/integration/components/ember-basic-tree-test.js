@@ -17,7 +17,7 @@ module('Integration | Component | ember basic tree', function (hooks) {
       </BasicTree>
     `);
 
-    assert.dom('.ember-basic-tree').hasText('node');
+    assert.dom('.ember-basic-tree').includesText('node');
   });
 
   test('do not render collapsed nodes', async function (assert) {
@@ -29,7 +29,7 @@ module('Integration | Component | ember basic tree', function (hooks) {
       </BasicTree>
     `);
 
-    assert.dom('.ember-basic-tree').hasText('');
+    assert.dom('.ember-basic-tree').doesNotIncludeText('node');
   });
 
   test('expand and collapse', async function (assert) {
@@ -42,13 +42,13 @@ module('Integration | Component | ember basic tree', function (hooks) {
       </BasicTree>
     `);
 
-    assert.dom('.ember-basic-tree').hasText('');
+    assert.dom('.ember-basic-tree').doesNotIncludeText('node');
 
     this.set('isExpanded', true);
-    assert.dom('.ember-basic-tree').hasText('node');
+    assert.dom('.ember-basic-tree').includesText('node');
 
     this.set('isExpanded', false);
-    assert.dom('.ember-basic-tree').hasText('');
+    assert.dom('.ember-basic-tree').doesNotIncludeText('node');
   });
 
   test('notify when items are expanded and collapsed', async function (assert) {
@@ -84,15 +84,15 @@ module('Integration | Component | ember basic tree', function (hooks) {
     `);
 
     const expander = find('.ember-basic-tree-expander');
-    assert.dom('.ember-basic-tree').hasText('');
+    assert.dom('.ember-basic-tree').doesNotIncludeText('node');
 
     await click(expander);
     assert.equal(this.expanded, true);
-    assert.dom('.ember-basic-tree').hasText('node');
+    assert.dom('.ember-basic-tree').includesText('node');
 
     await click(expander);
     assert.equal(this.expanded, false);
-    assert.dom('.ember-basic-tree').hasText('');
+    assert.dom('.ember-basic-tree').doesNotIncludeText('node');
   });
 
   test('dynamically add nodes', async function (assert) {
@@ -108,10 +108,10 @@ module('Integration | Component | ember basic tree', function (hooks) {
 
     items.pushObject('foo');
     await settled();
-    assert.dom('.ember-basic-tree').hasText('foo');
+    assert.dom('.ember-basic-tree').includesText('foo');
 
     this.set('items', ['baz']);
-    assert.dom('.ember-basic-tree').hasText('baz');
+    assert.dom('.ember-basic-tree').includesText('baz');
   });
 
   test('custom contentComponent', async function (assert) {
@@ -131,9 +131,9 @@ module('Integration | Component | ember basic tree', function (hooks) {
       </BasicTree>
     `);
 
-    assert.dom('.ember-basic-tree').hasText('title1: content');
+    assert.dom('.ember-basic-tree').includesText('title1: content');
 
     this.set('customTitle', 'title2');
-    assert.dom('.ember-basic-tree').hasText('title2: content');
+    assert.dom('.ember-basic-tree').includesText('title2: content');
   });
 });
