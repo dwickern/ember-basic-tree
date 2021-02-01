@@ -1,0 +1,9 @@
+{{! BEGIN-SNIPPET tree-expander.hbs }}
+<span role="button" ...attributes {{on 'click' @node.actions.toggle}}>
+  {{#if @node.isExpanded}}
+    &blacktriangledown;
+  {{else}}
+    &blacktriangleright;
+  {{/if}}
+</span>
+{{! END-SNIPPET }}

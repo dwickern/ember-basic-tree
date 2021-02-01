@@ -1,0 +1,5 @@
+{{! BEGIN-SNIPPET custom-children-js-index.hbs }}
+<BasicTree @childrenComponent={{component "custom-children-js/children"}} as |tree|>
+  <tree.Node @content={{this.root}} @isExpandable={{true}} @isExpanded={{true}}/>
+</BasicTree>
+{{! END-SNIPPET }}

@@ -1,0 +1,35 @@
+{{! BEGIN-SNIPPET basic-example.hbs }}
+<BasicTree as |tree|>
+  <tree.Node @content="ember-basic-tree" @isExpanded={{true}}>
+    <tree.Node @content="app">
+      <tree.Node @content="components" />
+      <tree.Node @content="controllers" />
+      <tree.Node @content="helpers" />
+      <tree.Node @content="models" />
+      <tree.Node @content="routes" />
+      <tree.Node @content="styles">
+        <tree.Node @content="app.css" />
+      </tree.Node>
+      <tree.Node @content="templates">
+        <tree.Node @content="components" />
+        <tree.Node @content="application.hbs" />
+      </tree.Node>
+    </tree.Node>
+    <tree.Node @content="config">
+      <tree.Node @content="environment.js" />
+      <tree.Node @content="targets.js" />
+    </tree.Node>
+    <tree.Node @content="public">
+      <tree.Node @content="crossdomain.xml" />
+      <tree.Node @content="robots.txt" />
+    </tree.Node>
+    <tree.Node @content=".editorconfig" />
+    <tree.Node @content=".ember-cli" />
+    <tree.Node @content=".eslintrc.js" />
+    <tree.Node @content=".gitignore" />
+    <tree.Node @content="ember-cli-build.js" />
+    <tree.Node @content="package.json" />
+    <tree.Node @content="README.md" />
+  </tree.Node>
+</BasicTree>
+{{! END-SNIPPET }}

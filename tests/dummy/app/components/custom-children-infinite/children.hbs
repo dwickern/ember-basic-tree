@@ -1,0 +1,9 @@
+{{! BEGIN-SNIPPET custom-children-infinite-children.hbs }}
+{{#if @node.isExpanded}}
+  <ul ...attributes>
+    <@tree.Node @content="First" @isExpandable={{true}}/>
+    <@tree.Node @content="Second" @isExpandable={{true}}/>
+    <@tree.Node @content="Third" @isExpandable={{true}}/>
+  </ul>
+{{/if}}
+{{! END-SNIPPET }}

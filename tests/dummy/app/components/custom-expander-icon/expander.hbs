@@ -1,0 +1,9 @@
+{{! BEGIN-SNIPPET custom-expander-icon-expander.hbs }}
+<button type="button" ...attributes {{on "click" @node.actions.toggle}}>
+  {{#if @node.isExpanded}}
+    <FaIcon @icon="chevron-down" @size="xs" @fixedWidth={{true}} />
+  {{else}}
+    <FaIcon @icon="chevron-right" @size="xs" @fixedWidth={{true}} />
+  {{/if}}
+</button>
+{{! END-SNIPPET }}

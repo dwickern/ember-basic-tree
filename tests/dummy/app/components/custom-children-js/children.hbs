@@ -1,0 +1,14 @@
+{{! BEGIN-SNIPPET custom-children-js-children.hbs }}
+{{#if @node.isExpanded}}
+  <ul ...attributes>
+    {{#if @node.content.children.isRunning}}
+      <FaIcon @icon="spinner" @spin={{true}} />
+      Loading...
+    {{else}}
+      {{#each @node.content.children.value as |child|}}
+        <@tree.Node @content={{child}} @isExpandable={{true}}/>
+      {{/each}}
+    {{/if}}
+  </ul>
+{{/if}}
+{{! END-SNIPPET }}

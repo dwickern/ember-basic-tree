@@ -1,0 +1,13 @@
+{{! BEGIN-SNIPPET custom-content-tree-arg-index.hbs }}
+<p>Try clicking a tree node:</p>
+<BasicTree
+  @contentComponent={{component "custom-content-tree-arg/content"}}
+  @clicked={{this.handleClick}} as |tree|
+>
+  <tree.Node @label="Root" @isExpanded={{true}}>
+    <tree.Node @label="First"/>
+    <tree.Node @label="Second"/>
+    <tree.Node @label="Third"/>
+  </tree.Node>
+</BasicTree>
+{{! END-SNIPPET }}

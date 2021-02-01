@@ -1,9 +1,12 @@
-@import 'ember-basic-tree';
+.docs-md li.ember-basic-tree-node,
+.docs-md ul.ember-basic-tree-children {
+  margin-bottom: 0;
+}
 
-.animation-example {
-  &--liquid-container {
-    overflow: initial;
-  }
+.not-found {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 .context-menu-example {
@@ -15,24 +18,8 @@
   }
 }
 
-.bootstrap-theme-example {
-  @import 'ember-bootstrap/bootstrap';
-  @import 'ember-basic-tree/themes/bootstrap';
-}
-
-.drag-drop-example {
-  .draggable-object, .draggable-object-target {
-    border: 1px solid transparent;
-
-    &.accepts-drag {
-      border: 1px dotted black;
-    }
-  }
-}
-
 .navigation-example {
   @import 'ember-bootstrap/bootstrap';
-  @import 'ember-basic-tree/themes/bootstrap';
 
   .navigation-example-link {
     margin: 1px 2px;
@@ -50,4 +37,8 @@
       background-color: $nav-pills-active-link-hover-bg;
     }
   }
+}
+
+.custom-expander-icon {
+  margin-left: -16px;
 }

@@ -1,0 +1,8 @@
+{{! BEGIN-SNIPPET custom-content-arg-index.hbs }}
+<BasicTree @contentComponent={{component "custom-content-arg/content"}} as |tree|>
+  <tree.Node @label="Root" @description="the root node" @isExpanded={{true}}>
+    <tree.Node @label="First" @description="the first node"/>
+    <tree.Node @label="Second" @description="the second node"/>
+  </tree.Node>
+</BasicTree>
+{{! END-SNIPPET }}

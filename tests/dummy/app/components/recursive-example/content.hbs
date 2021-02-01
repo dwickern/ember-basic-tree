@@ -1,0 +1,9 @@
+{{! BEGIN-SNIPPET recursive-example-content.hbs }}
+{{#if @node.directory}}
+  <FaIcon @icon="folder{{if @node.isExpanded "-open"}}" @fixedWidth={{true}}/>
+  {{@node.directory.name}}
+{{else}}
+  <FaIcon @icon="file-code" @fixedWidth={{true}}/>
+  {{@node.file.name}}
+{{/if}}
+{{! END-SNIPPET }}

@@ -1,0 +1,20 @@
+<div class="navigation-example">
+  {{! BEGIN-SNIPPET navigation-example.hbs }}
+  <BreadCrumbs @outputStyle="bootstrap" @linkable={{false}}/>
+
+  <BasicTree @contentComponent={{component "navigation-example/content"}} as |tree|>
+    <tree.Node @label="root" @route="docs.examples.navigation" @isExpanded={{true}}>
+      <tree.Node @label="child 1" @route="docs.examples.navigation.child1" @isExpanded={{true}}>
+        <tree.Node @label="descendant 1" @route="docs.examples.navigation.child1.descendant1"  />
+        <tree.Node @label="descendant 2" @route="docs.examples.navigation.child1.descendant2" />
+        <tree.Node @label="descendant 3" @route="docs.examples.navigation.child1.descendant3" />
+      </tree.Node>
+      <tree.Node @label="child 2" @route="docs.examples.navigation.child2" @isExpanded={{true}}>
+        <tree.Node @label="descendant 1" @route="docs.examples.navigation.child2.descendant1" />
+        <tree.Node @label="descendant 2" @route="docs.examples.navigation.child2.descendant2" />
+        <tree.Node @label="descendant 3" @route="docs.examples.navigation.child2.descendant3" />
+      </tree.Node>
+    </tree.Node>
+  </BasicTree>
+  {{! END-SNIPPET }}
+</div>
