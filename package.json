@@ -6,7 +6,10 @@
     "ember-addon"
   ],
   "homepage": "https://dwickern.github.io/ember-basic-tree",
-  "repository": "dwickern/ember-basic-tree",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/dwickern/ember-basic-tree.git"
+  },
   "license": "MIT",
   "author": "Derek Wickern <dwickern@gmail.com>",
   "directories": {
