@@ -1,6 +1,10 @@
 <div class="navigation-example">
   {{! BEGIN-SNIPPET navigation-example.hbs }}
-  <BreadCrumbs @outputStyle="bootstrap" @linkable={{false}}/>
+  Current route:
+
+  <span class="text-monospace">
+    {{this.router.currentRouteName}}
+  </span>
 
   <BasicTree @contentComponent={{component "navigation-example/content"}} as |tree|>
     <tree.Node @label="root" @route="docs.examples.navigation" @isExpanded={{true}}>

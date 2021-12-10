@@ -5,8 +5,8 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 module.exports = function (defaults) {
   let app = new EmberAddon(defaults, {
     'ember-bootstrap': {
-      bootstrapVersion: 3,
-      importBootstrapFont: true,
+      bootstrapVersion: 5,
+      importBootstrapFont: false,
       importBootstrapCSS: false,
     },
     snippetSearchPaths: ['addon', 'tests/dummy/app'],
@@ -19,5 +19,12 @@ module.exports = function (defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
-  return app.toTree();
+  const { maybeEmbroider } = require('@embroider/test-setup');
+  return maybeEmbroider(app, {
+    skipBabel: [
+      {
+        package: 'qunit',
+      },
+    ],
+  });
 };
