@@ -92,6 +92,7 @@
     "webpack": "^5.65.0"
   },
   "resolutions": {
+    "ember-raf-scheduler": "^0.3.0",
     "ember-svg-jar": "^2.3.3"
   },
   "engines": {
