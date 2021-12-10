@@ -62,6 +62,7 @@
     "ember-cli-inject-live-reload": "^2.1.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
+    "ember-click-outside": "^2.0.0",
     "ember-concurrency": "^2.2.0",
     "ember-crumbly": "^3.0.1",
     "ember-data": "^3.24.0",
