@@ -26,6 +26,14 @@ Usage
 
 [View the docs here](https://dwickern.github.io/ember-basic-tree/).
 
+```hbs
+<BasicTree as |tree|>
+  <tree.Node @content="ember" @isExpanded={{true}}>
+    <tree.Node @content="basic"/>
+    <tree.Node @content="tree"/>
+  </tree.Node>
+</BasicTree>
+```
 
 Contributing
 ------------------------------------------------------------------------------
