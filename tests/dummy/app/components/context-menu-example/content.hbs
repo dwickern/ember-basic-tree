@@ -8,7 +8,7 @@
     {{on-click-outside dd.actions.close eventType="contextmenu"}}
   >
     {{#if @node.menuComponent}}
-      {{component @node.menuComponent}}
+      <@node.menuComponent/>
     {{else}}
       {{@node.menuText}}
     {{/if}}
