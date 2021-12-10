@@ -77,7 +77,7 @@ module('Integration | Component | ember basic tree', function (hooks) {
     this.set('expanded', false);
     await render(hbs`
       <BasicTree as |tree|>
-        <tree.Node @isExpanded={{this.expanded}} @onExpanded={{set this.expanded}}>
+        <tree.Node @isExpanded={{this.expanded}} @onExpanded={{set this "expanded"}}>
           <tree.Node @content="node"/>
         </tree.Node>
       </BasicTree>
