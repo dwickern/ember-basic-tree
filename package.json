@@ -50,7 +50,7 @@
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^2.2.4",
     "ember-basic-dropdown": "^4.0.1",
-    "ember-bootstrap": "^4.6.2",
+    "ember-bootstrap": "^5.0.0-beta.2",
     "ember-cli": "~3.28.4",
     "ember-cli-addon-docs": "^4.2.1",
     "ember-cli-addon-docs-yuidoc": "^1.0.0",
