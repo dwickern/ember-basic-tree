@@ -67,10 +67,10 @@ module('Integration | Component | ember basic tree', function (hooks) {
     const expander = find('.ember-basic-tree-expander');
 
     await click(expander);
-    assert.equal(expanded, true);
+    assert.true(expanded);
 
     await click(expander);
-    assert.equal(expanded, false);
+    assert.false(expanded);
   });
 
   test('sync expanded state with ember-simple-set-helper', async function (assert) {
@@ -87,11 +87,11 @@ module('Integration | Component | ember basic tree', function (hooks) {
     assert.dom('.ember-basic-tree').doesNotIncludeText('node');
 
     await click(expander);
-    assert.equal(this.expanded, true);
+    assert.true(this.expanded);
     assert.dom('.ember-basic-tree').includesText('node');
 
     await click(expander);
-    assert.equal(this.expanded, false);
+    assert.false(this.expanded);
     assert.dom('.ember-basic-tree').doesNotIncludeText('node');
   });
 
