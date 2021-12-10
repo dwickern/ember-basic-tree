@@ -24,17 +24,15 @@
   .navigation-example-link {
     margin: 1px 2px;
     padding: 1px 3px;
-    border-radius: $nav-pills-border-radius;
 
-    &:hover,
-    &:focus {
+    @include border-radius($nav-pills-border-radius);
+    @include hover-focus() {
       text-decoration: none;
-      background-color: $nav-link-hover-bg;
     }
 
     &.active {
-      color: $nav-pills-active-link-hover-color;
-      background-color: $nav-pills-active-link-hover-bg;
+      color: $nav-pills-link-active-color;
+      background-color: $nav-pills-link-active-bg;
     }
   }
 }
