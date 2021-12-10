@@ -6,7 +6,7 @@
         @directory={{directory}}
         @isExpandable={{true}}
         @isExpanded={{directory.isExpanded}}
-        @onExpanded={{set directory.isExpanded}}
+        @onExpanded={{set directory "isExpanded"}}
       />
     {{/each}}
     {{#each @node.directory.files as |file|}}
