@@ -1,11 +1,14 @@
 {{! BEGIN-SNIPPET context-menu-content.hbs }}
 <BasicDropdown as |dd|>
-  <dd.Trigger {{on "contextmenu" (fn this.openContextMenu dd)}}>
+  <dd.Trigger {{on "contextmenu" (prevent-default dd.actions.open)}}>
     {{@node.content}}
   </dd.Trigger>
-  <dd.Content class="context-menu-example--dropdown-content">
+  <dd.Content
+    class="context-menu-example--dropdown-content"
+    {{on-click-outside dd.actions.close eventType="contextmenu"}}
+  >
     {{#if @node.menuComponent}}
-      {{component @node.menuComponent}}
+      <@node.menuComponent/>
     {{else}}
       {{@node.menuText}}
     {{/if}}

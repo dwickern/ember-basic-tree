@@ -1,6 +1,7 @@
 // BEGIN-SNIPPET custom-children-js-index.js
 import Component from '@glimmer/component';
-import { task, timeout } from 'ember-concurrency';
+import { task } from 'ember-concurrency-decorators';
+import { timeout } from 'ember-concurrency';
 
 class Node {
   constructor(counter, more) {
@@ -16,7 +17,8 @@ class Node {
 }
 
 export default class extends Component {
-  @task(function* () {
+  @task
+  *loadMore() {
     yield timeout(1000);
 
     const nodes = [];
@@ -24,8 +26,7 @@ export default class extends Component {
       nodes.push(this.generateNode());
     }
     return nodes;
-  })
-  loadMore;
+  }
 
   counter = 0;
 
