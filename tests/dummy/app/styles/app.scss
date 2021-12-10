@@ -24,11 +24,8 @@
   .navigation-example-link {
     margin: 1px 2px;
     padding: 1px 3px;
-
-    @include border-radius($nav-pills-border-radius);
-    @include hover-focus() {
-      text-decoration: none;
-    }
+    text-decoration: none;
+    border-radius: $nav-pills-border-radius;
 
     &.active {
       color: $nav-pills-link-active-color;
