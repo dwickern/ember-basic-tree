@@ -1,6 +1,6 @@
 // BEGIN-SNIPPET each-example.js
 import Component from '@glimmer/component';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 
 function generate(factory) {
   const length = Math.floor(Math.random() * 4 + 2);
@@ -11,7 +11,7 @@ export default class extends Component {
   get data() {
     return {
       companies: generate(() => ({
-        name: faker.company.companyName(),
+        name: faker.company.name(),
         departments: generate(() => ({
           name: faker.commerce.department(),
           products: generate(() => ({
