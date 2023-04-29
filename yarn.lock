@@ -1369,12 +1369,12 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fortawesome/ember-fontawesome@^0.2.2":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@fortawesome/ember-fontawesome/-/ember-fontawesome-0.2.3.tgz#62d943d0771b8fe291aaed7a8a223c8d7d8b6f02"
-  integrity sha512-wRiP0k1D7J3ecQhrsGpg+j7PbrFOQtDsMuAUYpvbrh+hSmfO0TCbL/BkPRMtgUIvtJiIigomvQKsiGvPJsfSeQ==
+"@fortawesome/ember-fontawesome@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@fortawesome/ember-fontawesome/-/ember-fontawesome-0.4.1.tgz#cbcc81cf0ad2083bcc7eea02c7b2c206d339db85"
+  integrity sha512-drBupV++kJP2rmyfxg55e4NeaezGEk1Ng9QMTFvEURIkFQfd3QPAxBdC9CLuAWKtzgF6zACGyv/9D2AzF45juQ==
   dependencies:
-    "@fortawesome/fontawesome-svg-core" "^1.2.0"
+    "@fortawesome/fontawesome-svg-core" "^6.2.0"
     broccoli-file-creator "^2.1.1"
     broccoli-merge-trees "^4.2.0"
     broccoli-plugin "^4.0.3"
@@ -1382,36 +1382,31 @@
     broccoli-source "^3.0.0"
     camel-case "^4.1.1"
     ember-ast-helpers "0.3.5"
-    ember-cli-babel "^7.21.0"
-    ember-cli-htmlbars "^5.2.0"
-    ember-get-config "^0.3.0"
+    ember-cli-babel "^7.26.6"
+    ember-cli-htmlbars "^5.7.1"
+    ember-get-config "^2.0.0"
     find-yarn-workspace-root "^2.0.0"
     glob "^7.1.2"
     rollup-plugin-node-resolve "^5.2.0"
 
-"@fortawesome/fontawesome-common-types@^0.2.36":
-  version "0.2.36"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.36.tgz#b44e52db3b6b20523e0c57ef8c42d315532cb903"
-  integrity sha512-a/7BiSgobHAgBWeN7N0w+lAhInrGxksn13uK7231n2m8EDPE3BMCl9NZLTGrj9ZXfCmC6LM0QLqXidIizVQ6yg==
+"@fortawesome/fontawesome-common-types@6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.4.0.tgz#88da2b70d6ca18aaa6ed3687832e11f39e80624b"
+  integrity sha512-HNii132xfomg5QVZw0HwXXpN22s7VBHQBv9CeOu9tfJnhsWQNd2lmTNi8CSrnw5B+5YOmzu1UoPAyxaXsJ6RgQ==
 
-"@fortawesome/fontawesome-common-types@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.3.0.tgz#949995a05c0d8801be7e0a594f775f1dbaa0d893"
-  integrity sha512-CA3MAZBTxVsF6SkfkHXDerkhcQs0QPofy43eFdbWJJkZiq3SfiaH1msOkac59rQaqto5EqWnASboY1dBuKen5w==
-
-"@fortawesome/fontawesome-svg-core@^1.2.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.3.0.tgz#343fac91fa87daa630d26420bfedfba560f85885"
-  integrity sha512-UIL6crBWhjTNQcONt96ExjUnKt1D68foe3xjEensLDclqQ6YagwCRYVQdrp/hW0ALRp/5Fv/VKw+MqTUWYYvPg==
+"@fortawesome/fontawesome-svg-core@^6.2.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.4.0.tgz#3727552eff9179506e9203d72feb5b1063c11a21"
+  integrity sha512-Bertv8xOiVELz5raB2FlXDPKt+m94MQ3JgDfsVbrqNpLU9+UE2E18GKjLKw+d3XbeYPqg1pzyQKGsrzbw+pPaw==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.3.0"
+    "@fortawesome/fontawesome-common-types" "6.4.0"
 
-"@fortawesome/free-solid-svg-icons@^5.15.2":
-  version "5.15.4"
-  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.15.4.tgz#2a68f3fc3ddda12e52645654142b9e4e8fbb6cc5"
-  integrity sha512-JLmQfz6tdtwxoihXLg6lT78BorrFyCf59SAwBM6qV/0zXyVeDygJVb3fk+j5Qat+Yvcxp1buLTY5iDh1ZSAQ8w==
+"@fortawesome/free-solid-svg-icons@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.4.0.tgz#48c0e790847fa56299e2f26b82b39663b8ad7119"
+  integrity sha512-kutPeRGWm8V5dltFP1zGjQOEAzaLZj4StdQhWVZnfGFCvAPVvHh8qk5bRrU4KXnRRRNni5tKQI9PBAdI6MP8nQ==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.36"
+    "@fortawesome/fontawesome-common-types" "6.4.0"
 
 "@fullhuman/postcss-purgecss@^2.1.2":
   version "2.3.0"
@@ -3940,14 +3935,6 @@ broccoli-debug@^0.6.3, broccoli-debug@^0.6.4, broccoli-debug@^0.6.5:
     symlink-or-copy "^1.1.8"
     tree-sync "^1.2.2"
 
-broccoli-file-creator@^1.1.1:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/broccoli-file-creator/-/broccoli-file-creator-1.2.0.tgz#27f1b25b1b00e7bb7bf3d5d7abed5f4d5388df4d"
-  integrity sha512-l9zthHg6bAtnOfRr/ieZ1srRQEsufMZID7xGYRW3aBDv3u/3Eux+Iawl10tAGYE5pL9YB4n5X4vxkp6iNOoZ9g==
-  dependencies:
-    broccoli-plugin "^1.1.0"
-    mkdirp "^0.5.1"
-
 broccoli-file-creator@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/broccoli-file-creator/-/broccoli-file-creator-2.1.1.tgz#7351dd2496c762cfce7736ce9b49e3fce0c7b7db"
@@ -6355,7 +6342,7 @@ ember-cli-htmlbars@^4.2.3, ember-cli-htmlbars@^4.3.1:
     strip-bom "^4.0.0"
     walk-sync "^2.0.2"
 
-ember-cli-htmlbars@^5.0.0, ember-cli-htmlbars@^5.2.0, ember-cli-htmlbars@^5.3.1, ember-cli-htmlbars@^5.3.2, ember-cli-htmlbars@^5.7.1:
+ember-cli-htmlbars@^5.0.0, ember-cli-htmlbars@^5.3.1, ember-cli-htmlbars@^5.3.2, ember-cli-htmlbars@^5.7.1:
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/ember-cli-htmlbars/-/ember-cli-htmlbars-5.7.2.tgz#e0cd2fb3c20d85fe4c3e228e6f0590ee1c645ba8"
   integrity sha512-Uj6R+3TtBV5RZoJY14oZn/sNPnc+UgmC8nb5rI4P3fR/gYoyTFIZSXiIM7zl++IpMoIrocxOrgt+mhonKphgGg==
@@ -6879,18 +6866,18 @@ ember-focus-trap@^1.0.0:
     "@embroider/addon-shim" "^1.0.0"
     focus-trap "^6.7.1"
 
-ember-get-config@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/ember-get-config/-/ember-get-config-0.3.0.tgz#a73a1a87b48d9dde4c66a0e52ed5260b8a48cfbd"
-  integrity sha512-0e2pKzwW5lBZ4oJnvu9qHOht4sP1MWz/m3hyz8kpSoMdrlZVf62LDKZ6qfKgy8drcv5YhCMYE6QV7MhnqlrzEQ==
-  dependencies:
-    broccoli-file-creator "^1.1.1"
-    ember-cli-babel "^7.0.0"
-
 ember-get-config@^1.0.0, ember-get-config@^1.0.2:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ember-get-config/-/ember-get-config-1.1.0.tgz#731e192f1fe8022e06c0dbcbe5622fb8c4c78b87"
   integrity sha512-diD+HwwY8QqpEk5DnDYfH7onYwl6NOgr1qv1ENbXih+/iiWYUVS/e0S/PlM7A4gdorD9spn1bnisnTLTf49Wpw==
+  dependencies:
+    "@embroider/macros" "^0.50.0 || ^1.0.0"
+    ember-cli-babel "^7.26.6"
+
+ember-get-config@^2.0.0:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/ember-get-config/-/ember-get-config-2.1.1.tgz#bede76c25d95dbefab8d30064abf7aa00bc19235"
+  integrity sha512-uNmv1cPG/4qsac8oIf5txJ2FZ8p88LEpG4P3dNcjsJS98Y8hd0GPMFwVqpnzI78Lz7VYRGQWY4jnE4qm5R3j4g==
   dependencies:
     "@embroider/macros" "^0.50.0 || ^1.0.0"
     ember-cli-babel "^7.26.6"
@@ -6939,14 +6926,14 @@ ember-maybe-in-element@^2.0.3:
     ember-cli-htmlbars "^6.1.1"
     ember-cli-version-checker "^5.1.2"
 
-"ember-modal-dialog@github:yapplabs/ember-modal-dialog#31ffee4c657ebe96b1f80adbc39c0339b52236e2":
+ember-modal-dialog@yapplabs/ember-modal-dialog#31ffee4c657ebe96b1f80adbc39c0339b52236e2:
   version "4.0.0-alpha.1"
   resolved "https://codeload.github.com/yapplabs/ember-modal-dialog/tar.gz/31ffee4c657ebe96b1f80adbc39c0339b52236e2"
   dependencies:
-    "@embroider/macros" "^0.49.0"
-    "@embroider/util" "^0.49.0"
-    ember-cli-babel "^7.26.8"
-    ember-cli-htmlbars "^6.0.1"
+    "@embroider/macros" "^0.43.5"
+    "@embroider/util" "^0.43.5"
+    ember-cli-babel "^7.26.6"
+    ember-cli-htmlbars "^5.7.1"
     ember-cli-version-checker "^2.1.0"
     ember-decorators "^6.1.1"
     ember-wormhole "^0.6.0"
