@@ -1,4 +1,8 @@
 import Component from '@glimmer/component';
+import ContentComponent from './basic-tree/tree-content';
+import ExpanderComponent from './basic-tree/tree-expander';
+import ChildrenComponent from './basic-tree/tree-children';
+import NodeComponent from './basic-tree/tree-node';
 
 /**
  * The main tree component
@@ -18,21 +22,21 @@ export default class BasicTreeComponent extends Component {
    * @argument contentComponent
    * @type {Component}
    */
-  contentComponent = 'basic-tree/tree-content';
+  contentComponent = ContentComponent;
 
   /**
    * Component used to render the expander
    * @argument expanderComponent
    * @type {Component}
    */
-  expanderComponent = 'basic-tree/tree-expander';
+  expanderComponent = ExpanderComponent;
 
   /**
    * Component used to render the children of a node
    * @argument childrenComponent
    * @type {Component}
    */
-  childrenComponent = 'basic-tree/tree-children';
+  childrenComponent = ChildrenComponent;
 
   /**
    * Component used to render the tree node
@@ -40,7 +44,7 @@ export default class BasicTreeComponent extends Component {
    * @type {Component}
    * @private
    */
-  nodeComponent = 'basic-tree/tree-node';
+  nodeComponent = NodeComponent;
 
   /**
    * The public tree API

@@ -7,7 +7,7 @@
   ...attributes
 >
   {{#if this.isExpandable}}
-    {{#let (component (or @expanderComponent @tree.expanderComponent)) as |TreeExpander|}}
+    {{#let (component (ensure-safe-component (or @expanderComponent @tree.expanderComponent))) as |TreeExpander|}}
       <TreeExpander
         class="ember-basic-tree-expander"
         @tree={{@tree}}
@@ -16,7 +16,7 @@
     {{/let}}
   {{/if}}
 
-  {{#let (component (or @contentComponent @tree.contentComponent)) as |TreeContent|}}
+  {{#let (component (ensure-safe-component (or @contentComponent @tree.contentComponent))) as |TreeContent|}}
     <TreeContent
       class="ember-basic-tree-content"
       @tree={{@tree}}
@@ -24,8 +24,8 @@
     />
   {{/let}}
 
-  {{#let (component (or @childrenComponent @tree.childrenComponent)) as |TreeChildren|}}
-    {{#let (assign @tree (hash Node=(component @tree.nodeComponent tree=@tree))) as |treeAPI|}}
+  {{#let (component (ensure-safe-component (or @childrenComponent @tree.childrenComponent))) as |TreeChildren|}}
+    {{#let (assign @tree (hash Node=(component (ensure-safe-component @tree.nodeComponent) tree=@tree))) as |treeAPI|}}
       <TreeChildren
         role="group"
         class="ember-basic-tree-children"
