@@ -1,5 +1,5 @@
 {{! BEGIN-SNIPPET context-menu-content.hbs }}
-<BasicDropdown as |dd|>
+<BasicDropdown @onOpen={{this.onOpen}} as |dd|>
   <dd.Trigger {{on "contextmenu" (prevent-default dd.actions.open)}}>
     {{@node.content}}
   </dd.Trigger>
