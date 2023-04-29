@@ -1,5 +1,5 @@
 {{! BEGIN-SNIPPET custom-expander-icon-expander.hbs }}
-<button type="button" ...attributes {{on "click" @node.actions.toggle}}>
+<button type="button" class="custom-expander-icon" ...attributes {{on "click" @node.actions.toggle}}>
   {{#if @node.isExpanded}}
     <FaIcon @icon="chevron-down" @size="xs" @fixedWidth={{true}} />
   {{else}}
