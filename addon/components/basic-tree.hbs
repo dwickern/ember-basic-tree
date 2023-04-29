@@ -1,5 +1,5 @@
 <ul class="ember-basic-tree ember-basic-tree-children" role="tree" ...attributes>
-  {{#let (hash Node=(component this.publicAPI.nodeComponent tree=this.publicAPI)) as |treeAPI|}}
+  {{#let (hash Node=(component (ensure-safe-component this.publicAPI.nodeComponent) tree=this.publicAPI)) as |treeAPI|}}
     {{yield treeAPI}}
   {{/let}}
 </ul>
