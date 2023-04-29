@@ -8,4 +8,4 @@ We use the tree node's `onExpanded` action to sync the component's expanded
 state with the model's `isExpanded` attribute. The model will store the state
 of the tree if we transition to a different route.
 
-{{demo-recursive root=this.model}}
+<DemoRecursive @root={{this.model}}/>
