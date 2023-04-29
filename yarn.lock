@@ -6746,7 +6746,7 @@ ember-fetch@^8.1.1:
     node-fetch "^2.6.1"
     whatwg-fetch "^3.6.2"
 
-ember-focus-trap@^1.0.0:
+ember-focus-trap@^1.0.0, ember-focus-trap@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/ember-focus-trap/-/ember-focus-trap-1.0.2.tgz#813ee3684b95f31a9534ef02f47da2bb7f5f13e9"
   integrity sha512-/8Cx9KI7uqoMaNN4Iyxc24P2JIvAcCL3cI1tYdZRHTwTd1sG6esEZWOnpxZOSE7m4xHww8HVUSiXzgyqD8YIhA==
