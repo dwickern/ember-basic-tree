@@ -1,9 +1,11 @@
 import { A } from '@ember/array';
-import Component from '@ember/component'; // eslint-disable-line ember/no-classic-components
+import Component from '@glimmer/component';
+import { setComponentTemplate } from '@ember/component';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render, settled, find, click } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
+import { capitalize } from '@ember/string';
 
 module('Integration | Component | ember basic tree', function (hooks) {
   setupRenderingTest(hooks);
@@ -115,25 +117,26 @@ module('Integration | Component | ember basic tree', function (hooks) {
   });
 
   test('custom contentComponent', async function (assert) {
-    this.owner.register(
-      'component:custom-content',
-      class extends Component {
-        layout = hbs`
-          {{@node.title}}: {{@node.content}}
-        `;
+    class CustomContentComponent extends Component {
+      get capitalizedTitle() {
+        const { node } = this.args;
+        return capitalize(node.title);
       }
-    );
+    }
+    setComponentTemplate(hbs`{{this.capitalizedTitle}}: {{@node.description}}`, CustomContentComponent);
+
+    this.contentComponent = CustomContentComponent;
 
     this.set('customTitle', 'title1');
     await render(hbs`
-      <BasicTree @contentComponent={{component "custom-content"}} as |tree|>
-        <tree.Node @content="content" @title={{this.customTitle}}/>
+      <BasicTree @contentComponent={{this.contentComponent}} as |tree|>
+        <tree.Node @title={{this.customTitle}} @description="content"/>
       </BasicTree>
     `);
 
-    assert.dom('.ember-basic-tree').includesText('title1: content');
+    assert.dom('.ember-basic-tree').includesText('Title1: content');
 
     this.set('customTitle', 'title2');
-    assert.dom('.ember-basic-tree').includesText('title2: content');
+    assert.dom('.ember-basic-tree').includesText('Title2: content');
   });
 });

@@ -2,8 +2,8 @@
 
 Here's a basic example which renders static content:
 
-{{demo-basic}}
+<DemoBasic/>
 
 Here we render some dynamic data using `{{#each}}`:
 
-{{demo-each}}
+<DemoEach/>
