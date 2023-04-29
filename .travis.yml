@@ -54,7 +54,7 @@ jobs:
     - env: EMBER_TRY_SCENARIO=ember-default-with-jquery
     - env: EMBER_TRY_SCENARIO=ember-classic
     - env: EMBER_TRY_SCENARIO=embroider-safe
-#    - env: EMBER_TRY_SCENARIO=embroider-optimized
+    - env: EMBER_TRY_SCENARIO=embroider-optimized
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
