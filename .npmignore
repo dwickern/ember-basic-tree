@@ -16,11 +16,13 @@
 /.git/
 /.github/
 /.gitignore
+/.idea/
 /.prettierignore
 /.prettierrc.js
 /.template-lintrc.js
 /.travis.yml
 /.watchmanconfig
+/.yarn/
 /bower.json
 /CONTRIBUTING.md
 /ember-cli-build.js
